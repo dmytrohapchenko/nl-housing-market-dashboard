@@ -1,30 +1,27 @@
 USE nl_housing_market;
 
+-- Recreate the fact table at one row per region and quarter.
 DROP TABLE IF EXISTS fact_housing_market;
 
 CREATE TABLE fact_housing_market (
-                                     date_key INT NOT NULL,
-                                     region_id INT NOT NULL,
-
-                                     house_price_index DECIMAL(10, 2),
-                                     price_index_ci_lower DECIMAL(10, 2),
-                                     price_index_ci_upper DECIMAL(10, 2),
-                                     price_index_qoq_pct DECIMAL(6, 2),
-                                     price_index_yoy_pct DECIMAL(6, 2),
-
-                                     sold_dwellings INT,
-                                     sold_dwellings_qoq_pct DECIMAL(6, 2),
-                                     sold_dwellings_yoy_pct DECIMAL(6, 2),
-
-                                     average_purchase_price DECIMAL(12, 2),
-                                     total_purchase_value DECIMAL(18, 2),
-
-                                     PRIMARY KEY (date_key, region_id),
-
-                                     FOREIGN KEY (date_key) REFERENCES dim_date(date_key),
-                                     FOREIGN KEY (region_id) REFERENCES dim_region(region_id)
+    date_key INT NOT NULL,
+    region_id INT NOT NULL,
+    house_price_index DECIMAL(10, 2),
+    price_index_ci_lower DECIMAL(10, 2),
+    price_index_ci_upper DECIMAL(10, 2),
+    price_index_qoq_pct DECIMAL(6, 2),
+    price_index_yoy_pct DECIMAL(6, 2),
+    sold_dwellings INT,
+    sold_dwellings_qoq_pct DECIMAL(6, 2),
+    sold_dwellings_yoy_pct DECIMAL(6, 2),
+    average_purchase_price DECIMAL(12, 2),
+    total_purchase_value DECIMAL(18, 2),
+    PRIMARY KEY (date_key, region_id),
+    FOREIGN KEY (date_key) REFERENCES dim_date (date_key),
+    FOREIGN KEY (region_id) REFERENCES dim_region (region_id)
 );
 
+-- Load housing market metrics from staging into the dimensional model.
 INSERT INTO fact_housing_market (
     date_key,
     region_id,
@@ -53,10 +50,8 @@ SELECT
     stg.average_purchase_price,
     stg.total_purchase_value
 FROM stg_housing_market AS stg
-
-         JOIN dim_date AS dd
-              ON stg.year_num = dd.year_num
-                  AND stg.quarter_num = dd.quarter_num
-
-         JOIN dim_region AS dr
-              ON stg.region_code = dr.region_code;
+JOIN dim_date AS dd
+    ON stg.year_num = dd.year_num
+    AND stg.quarter_num = dd.quarter_num
+JOIN dim_region AS dr
+    ON stg.region_code = dr.region_code;
