@@ -87,9 +87,15 @@ Planned dashboard content:
 data/
   raw/
 docs/
+  business_brief.md
+  data_notes.md
+  kpi_definitions.md
+  powerbi_measure_plan.md
 sql/
 powerbi/
+  README.md
 screenshots/
+  README.md
 ```
 
 ## Status
