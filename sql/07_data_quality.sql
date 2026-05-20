@@ -64,7 +64,8 @@ SELECT
     region_code,
     COUNT(*) AS cnt
 FROM dim_region
-GROUP BY region_code
+GROUP BY
+    region_code
 HAVING COUNT(*) > 1;
 
 -- Check 8: Confirm that the fact table covers the full expected reporting period.
