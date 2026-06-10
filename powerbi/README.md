@@ -25,6 +25,15 @@ Recommended relationship direction: one-to-many from each dimension table to the
 
 Page name: Housing Market Overview
 
+## Build Assets
+
+Use these files to manually build the Power BI dashboard:
+
+- `dashboard_spec.md` - one-page dashboard layout, visuals, slicers, formatting rules, and screenshot checklist
+- `build_steps.md` - exact manual Power BI Desktop build steps
+- `housing_market_theme.json` - clean professional light Power BI theme
+- `../docs/powerbi_measure_plan.md` - practical DAX measure plan
+
 ## Planned Visuals
 
 - KPI cards
