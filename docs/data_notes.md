@@ -23,9 +23,15 @@ The raw period code is parsed into:
 - `year_quarter`: formatted as `YYYY-Qn`
 - `date_key`: calculated as `year_num * 10 + quarter_num`
 
-## Region Code Limitation
+## Region Name Enrichment
 
-The current region field is `region_code`. No separate region name or hierarchy is included in the current dimensional model.
+The original CBS dataset contains a COROP `region_code` field, such as `CR01` or `CR23`. These codes are useful for technical checks, but they are not readable enough for dashboard labels.
+
+Readable `region_name` values are added through the lookup file `data/lookup/corop_region_mapping.csv`. The lookup is loaded by `sql/08_region_name_enrichment.sql`, which adds `region_name` to `dim_region` while preserving the existing region x quarter fact table grain.
+
+Power BI should use `dim_region[region_name]` in charts, tables, and slicers for readability. `dim_region[region_code]` remains available for tooltips and technical validation.
+
+Mapping source: CBS StatLine table `85819ENG`, OData `Regions` dimension (`https://opendata.cbs.nl/ODataApi/OData/85819ENG/Regions`).
 
 ## Main Metrics
 

@@ -8,7 +8,7 @@ Housing Market Overview
 
 This one-page Power BI dashboard summarizes Dutch housing market trends by quarter and region. It is designed to show latest market conditions, price growth, sales activity, and regional differences using the completed SQL dimensional model.
 
-The dashboard has been completed from this specification.
+The dashboard v1 exists locally. Final repository completion depends on adding readable screenshots.
 
 ## Target User
 
@@ -74,7 +74,7 @@ Create five KPI cards:
 ### Top 10 Regions by YoY House Price Growth
 
 - Visual type: Clustered bar chart
-- Y-axis: `dim_region[region_code]`
+- Y-axis: `dim_region[region_name]`
 - X-axis: `Latest YoY %`
 - Filter: Top 10 by `Latest YoY %`
 - Sort: `Latest YoY %` descending
@@ -83,7 +83,7 @@ Create five KPI cards:
 ### Top 10 Regions by Sold Dwellings
 
 - Visual type: Clustered bar chart
-- Y-axis: `dim_region[region_code]`
+- Y-axis: `dim_region[region_name]`
 - X-axis: `Latest Sold Dwellings`
 - Filter: Top 10 by `Latest Sold Dwellings`
 - Sort: `Latest Sold Dwellings` descending
@@ -93,6 +93,7 @@ Create five KPI cards:
 
 - Visual type: Table
 - Columns:
+  - `dim_region[region_name]`
   - `dim_region[region_code]`
   - `Latest House Price Index`
   - `Latest YoY %`
@@ -107,7 +108,7 @@ Create five KPI cards:
 Create these slicers:
 
 - `dim_date[year_quarter]`
-- `dim_region[region_code]`
+- `dim_region[region_name]`
 
 Recommended settings:
 

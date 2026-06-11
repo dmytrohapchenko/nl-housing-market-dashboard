@@ -1,17 +1,18 @@
-# Power BI Dashboard
+# Power BI Build Package
 
 ## Dashboard Goal
 
-The completed Power BI dashboard presents a clear overview of Dutch housing market trends by region and quarter. It helps users compare house price index movement, sales activity, and latest-quarter regional performance from the SQL dimensional model.
+The Power BI dashboard v1 presents a clear overview of Dutch housing market trends by region and quarter. It helps users compare house price index movement, sales activity, and latest-quarter regional performance from the SQL dimensional model.
 
-## Dashboard File
+## Local Dashboard File
 
 - `nl_housing_market_dashboard.pbix`
 
 ## Supporting Assets
 
 - `housing_market_theme.json` - custom light Power BI theme
-- `dashboard_spec.md` - final dashboard layout, visuals, slicers, formatting rules, and screenshot checklist
+- `dashboard_spec.md` - dashboard layout, visuals, slicers, formatting rules, and screenshot checklist
+- `build_steps.md` - manual build and refresh steps
 - `../docs/powerbi_measure_plan.md` - DAX measure plan used for the report
 
 ## Model
@@ -39,6 +40,8 @@ Visuals:
 - top 10 regions by sold dwellings
 - latest-quarter regional snapshot table
 - slicers for quarter and region
+
+Use `dim_region[region_name]` for readable region labels in visuals. Keep `dim_region[region_code]` available for tooltips, filters, or technical checks.
 
 ## Screenshots
 

@@ -4,7 +4,7 @@
 
 This project is a SQL + Power BI reporting case using official Dutch housing market data from CBS. It is designed as a reporting-focused portfolio project for analyzing regional housing market trends and period-over-period KPI changes.
 
-The SQL layer builds a simple dimensional model for quarterly regional housing metrics. The Power BI dashboard has been completed to visualize the reporting model and latest-quarter market comparisons.
+The SQL layer builds a simple dimensional model for quarterly regional housing metrics. A Power BI dashboard v1 exists locally, and final repository completion depends on adding readable screenshots and final README polish.
 
 ## Business Questions
 
@@ -21,7 +21,7 @@ The SQL layer builds a simple dimensional model for quarterly regional housing m
 - Dataset: Existing own homes; purchase price indices 2020=100 by region (COROP)
 - Grain: one row per region x quarter
 - Analysis window: 2020 Q1 to 2025 Q4
-- Current region field: `region_code`
+- Region fields: `region_code`, enriched with `region_name` for readable reporting
 
 ## Data Model
 
@@ -29,7 +29,7 @@ The project uses a compact dimensional model for reporting:
 
 - `stg_housing_market`: clean staging layer with typed fields from the raw source.
 - `dim_date`: one row per quarter.
-- `dim_region`: one row per region.
+- `dim_region`: one row per region, with COROP code and readable COROP region name.
 - `fact_housing_market`: one row per region x quarter.
 
 The date key is calculated as `date_key = year_num * 10 + quarter_num`. The fact table contains dimension keys and housing market metrics only.
@@ -44,6 +44,7 @@ The date key is calculated as `date_key = year_num * 10 + quarter_num`. The fact
 - `05_fact_housing_market.sql`: loads the fact table at region x quarter grain.
 - `07_data_quality.sql`: validates the final reporting model.
 - `06_kpi_queries.sql`: contains business KPI queries for reporting and Power BI.
+- `08_region_name_enrichment.sql`: enriches `dim_region` with readable COROP region names.
 
 ## Data Quality Checks
 
@@ -71,14 +72,15 @@ The KPI query file includes:
 
 ## Power BI Dashboard
 
-The completed dashboard is stored in:
+The local dashboard file is:
 
 - `powerbi/nl_housing_market_dashboard.pbix`
 
-Dashboard assets:
+Power BI assets:
 
 - `powerbi/housing_market_theme.json`
 - `powerbi/dashboard_spec.md`
+- `powerbi/build_steps.md`
 - `powerbi/README.md`
 
 Dashboard content:
@@ -118,6 +120,7 @@ powerbi/
   nl_housing_market_dashboard.pbix
   housing_market_theme.json
   dashboard_spec.md
+  build_steps.md
   README.md
 screenshots/
   README.md
@@ -128,5 +131,5 @@ screenshots/
 - SQL pipeline: completed
 - data quality checks: completed
 - KPI queries: completed
-- Power BI dashboard: completed
+- Power BI dashboard: v1 exists locally
 - screenshots: not present in this checkout
