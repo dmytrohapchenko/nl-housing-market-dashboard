@@ -1,48 +1,45 @@
-# Power BI Preparation
+# Power BI Dashboard
 
 ## Dashboard Goal
 
-The Power BI dashboard will present a clear overview of Dutch housing market trends by region and quarter. It should help users compare house price index movement, sales activity, and latest-quarter regional performance.
+The completed Power BI dashboard presents a clear overview of Dutch housing market trends by region and quarter. It helps users compare house price index movement, sales activity, and latest-quarter regional performance from the SQL dimensional model.
 
-## Tables to Import
+## Dashboard File
 
-Import these SQL model tables into Power BI:
+- `nl_housing_market_dashboard.pbix`
+
+## Supporting Assets
+
+- `housing_market_theme.json` - custom light Power BI theme
+- `dashboard_spec.md` - final dashboard layout, visuals, slicers, formatting rules, and screenshot checklist
+- `../docs/powerbi_measure_plan.md` - DAX measure plan used for the report
+
+## Model
+
+The report uses these SQL model tables:
 
 - `dim_date`
 - `dim_region`
 - `fact_housing_market`
 
-## Relationships
+Relationships:
 
-Create these relationships in the Power BI model:
+- `dim_date[date_key]` filters `fact_housing_market[date_key]`
+- `dim_region[region_id]` filters `fact_housing_market[region_id]`
 
-- `fact_housing_market[date_key]` -> `dim_date[date_key]`
-- `fact_housing_market[region_id]` -> `dim_region[region_id]`
-
-Recommended relationship direction: one-to-many from each dimension table to the fact table.
-
-## Suggested Dashboard Page
+## Dashboard Page
 
 Page name: Housing Market Overview
 
-## Build Assets
+Visuals:
 
-Use these files to manually build the Power BI dashboard:
-
-- `dashboard_spec.md` - one-page dashboard layout, visuals, slicers, formatting rules, and screenshot checklist
-- `build_steps.md` - exact manual Power BI Desktop build steps
-- `housing_market_theme.json` - clean professional light Power BI theme
-- `../docs/powerbi_measure_plan.md` - practical DAX measure plan
-
-## Planned Visuals
-
-- KPI cards
+- KPI cards for latest price index, YoY change, QoQ change, sold dwellings, and average purchase price
 - quarterly house price index trend
-- regional comparison
-- top regions by sold dwellings
-- latest quarter snapshot table
-- slicers by `year_quarter` and `region_code`
+- top 10 regions by YoY house price growth
+- top 10 regions by sold dwellings
+- latest-quarter regional snapshot table
+- slicers for quarter and region
 
 ## Screenshots
 
-Screenshots will be added after the Power BI dashboard is created.
+Dashboard screenshot files were not present in this checkout. When added, the expected screenshot filenames are listed in `../screenshots/README.md`.

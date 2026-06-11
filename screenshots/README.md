@@ -1,13 +1,13 @@
 # Screenshots
 
-Screenshots will be added after the Power BI dashboard is created.
+This folder is reserved for screenshots of the completed Power BI dashboard.
 
-## Planned Screenshots
+No screenshot image files are present in this checkout.
+
+## Screenshot Index
 
 - `dashboard_overview.png`
 - `model_view.png`
 - `kpi_cards.png`
 - `regional_comparison.png`
 - `latest_quarter_snapshot.png`
-
-Only add screenshots after the Power BI dashboard has been manually built. Do not add placeholder or fake screenshots.

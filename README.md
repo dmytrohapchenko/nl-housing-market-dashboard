@@ -4,7 +4,7 @@
 
 This project is a SQL + Power BI reporting case using official Dutch housing market data from CBS. It is designed as a reporting-focused portfolio project for analyzing regional housing market trends and period-over-period KPI changes.
 
-The SQL layer builds a simple dimensional model for quarterly regional housing metrics. A Power BI dashboard is planned as the next step and will be added after SQL validation.
+The SQL layer builds a simple dimensional model for quarterly regional housing metrics. The Power BI dashboard has been completed to visualize the reporting model and latest-quarter market comparisons.
 
 ## Business Questions
 
@@ -71,15 +71,37 @@ The KPI query file includes:
 
 ## Power BI Dashboard
 
-Power BI dashboard will be added after SQL validation.
+The completed dashboard is stored in:
 
-Planned dashboard content:
+- `powerbi/nl_housing_market_dashboard.pbix`
 
-- KPI cards
-- quarterly trend
-- regional comparison
-- latest quarter snapshot
-- top/bottom regions
+Dashboard assets:
+
+- `powerbi/housing_market_theme.json`
+- `powerbi/dashboard_spec.md`
+- `powerbi/README.md`
+
+Dashboard content:
+
+- KPI cards for latest house price index, YoY change, QoQ change, sold dwellings, and average purchase price
+- quarterly house price index trend
+- top 10 regions by YoY house price growth
+- top 10 regions by sold dwellings
+- latest-quarter regional snapshot table
+- slicers for quarter and region
+
+## Dashboard Preview
+
+Dashboard screenshot files were not present in this checkout, so preview images are not embedded here.
+
+Expected screenshot files:
+
+- `screenshots/dashboard_overview.png`
+- `screenshots/model_view.png`
+
+## Key Insights
+
+Key insights should be taken directly from the completed Power BI dashboard and verified screenshots. No screenshot image files were present in this checkout, so this README does not state numeric or regional findings.
 
 ## Repository Structure
 
@@ -93,6 +115,9 @@ docs/
   powerbi_measure_plan.md
 sql/
 powerbi/
+  nl_housing_market_dashboard.pbix
+  housing_market_theme.json
+  dashboard_spec.md
   README.md
 screenshots/
   README.md
@@ -103,5 +128,5 @@ screenshots/
 - SQL pipeline: completed
 - data quality checks: completed
 - KPI queries: completed
-- Power BI dashboard: in progress
-- screenshots: to be added
+- Power BI dashboard: completed
+- screenshots: not present in this checkout

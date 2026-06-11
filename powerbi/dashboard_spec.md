@@ -6,9 +6,9 @@ Housing Market Overview
 
 ## Dashboard Purpose
 
-This one-page Power BI dashboard will summarize Dutch housing market trends by quarter and region. It is designed to show latest market conditions, price growth, sales activity, and regional differences using the completed SQL dimensional model.
+This one-page Power BI dashboard summarizes Dutch housing market trends by quarter and region. It is designed to show latest market conditions, price growth, sales activity, and regional differences using the completed SQL dimensional model.
 
-The dashboard is a build specification only. It does not indicate that the Power BI report has already been completed.
+The dashboard has been completed from this specification.
 
 ## Target User
 
@@ -136,7 +136,7 @@ Recommended settings:
 
 ## Screenshot Checklist
 
-After manually building the Power BI report, export these screenshots and save them in the `screenshots` folder:
+The expected dashboard screenshots are:
 
 - `dashboard_overview.png`
 - `model_view.png`
