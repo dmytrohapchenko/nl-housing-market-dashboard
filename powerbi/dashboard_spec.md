@@ -1,14 +1,13 @@
 # Power BI Dashboard Specification
 
-## Page Name
+## Page Names
 
-Housing Market Overview
+- Page 1: Dutch Housing Market Overview
+- Page 2: Regional Performance Snapshot
 
 ## Dashboard Purpose
 
-This one-page Power BI dashboard summarizes Dutch housing market trends by quarter and region. It is designed to show latest market conditions, price growth, sales activity, and regional differences using the completed SQL dimensional model.
-
-The dashboard v1 exists locally. Final repository completion depends on adding readable screenshots.
+This two-page Power BI dashboard summarizes Dutch housing market trends by quarter and region. It is designed to show latest market conditions, price growth, sales activity, and regional differences using the completed SQL dimensional model.
 
 ## Target User
 
@@ -21,25 +20,23 @@ The target user is a junior data analyst, recruiter, hiring manager, or portfoli
 
 ## Final Layout
 
-Use a single report page with a clean professional layout.
+Use two clean report pages with a compact portfolio-ready layout.
 
 Recommended page size: 16:9.
 
-Recommended structure:
+Page 1: Dutch Housing Market Overview
 
-1. Header area
-   - Page title: Housing Market Overview
-   - Optional subtitle: Netherlands housing market by quarter and region
-2. Top row
-   - Five KPI cards in one horizontal row
-3. Middle row
-   - Left: House Price Index Trend by Quarter line chart
-   - Right: Top 10 Regions by YoY House Price Growth bar chart
-4. Lower row
-   - Left: Top 10 Regions by Sold Dwellings bar chart
-   - Right: Latest Quarter Regional Snapshot table
-5. Slicer area
-   - Place slicers at the top right or in a narrow left panel
+- KPI cards
+- House Price Index Trend by Quarter line chart
+- Top 5 Regions by YoY Growth bar chart
+- Top 5 Regions by Sold Dwellings bar chart
+- slicers for quarter and region
+
+Page 2: Regional Performance Snapshot
+
+- latest quarter regional comparison table
+- regional performance details using readable `region_name` labels
+- supporting slicers where useful
 
 ## KPI Card List
 
@@ -71,21 +68,21 @@ Create five KPI cards:
 - Sort: `dim_date[year_quarter]` ascending by `dim_date[year_quarter_sort]`
 - Purpose: Show the quarterly trend in house price index.
 
-### Top 10 Regions by YoY House Price Growth
+### Top 5 Regions by YoY Growth
 
 - Visual type: Clustered bar chart
 - Y-axis: `dim_region[region_name]`
 - X-axis: `Latest YoY %`
-- Filter: Top 10 by `Latest YoY %`
+- Filter: Top 5 by `Latest YoY %`
 - Sort: `Latest YoY %` descending
 - Purpose: Identify regions with the strongest latest year-over-year price growth.
 
-### Top 10 Regions by Sold Dwellings
+### Top 5 Regions by Sold Dwellings
 
 - Visual type: Clustered bar chart
 - Y-axis: `dim_region[region_name]`
 - X-axis: `Latest Sold Dwellings`
-- Filter: Top 10 by `Latest Sold Dwellings`
+- Filter: Top 5 by `Latest Sold Dwellings`
 - Sort: `Latest Sold Dwellings` descending
 - Purpose: Identify regions with the highest latest-quarter sales activity.
 
@@ -137,19 +134,19 @@ Recommended settings:
 
 ## Screenshot Checklist
 
-The expected dashboard screenshots are:
+The final dashboard screenshots are:
 
 - `dashboard_overview.png`
 - `model_view.png`
 - `kpi_cards.png`
 - `regional_comparison.png`
-- `latest_quarter_snapshot.png`
+- `regional_performance_snapshot.png`
 
 Before adding screenshots, verify:
 
 - All five KPI cards display values.
 - The line chart is sorted by quarter in chronological order.
-- Top 10 bar charts are filtered and sorted correctly.
+- Top 5 bar charts are filtered and sorted correctly.
 - The table uses latest-quarter measures.
-- Slicers work for `year_quarter` and `region_code`.
+- Slicers work for `year_quarter` and `region_name`.
 - No placeholder or fake screenshots are included.

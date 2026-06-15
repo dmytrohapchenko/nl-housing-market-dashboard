@@ -1,6 +1,6 @@
 # Manual Power BI Build Steps
 
-These steps describe how to build or refresh the Power BI report from the completed SQL model. The dashboard v1 exists locally, but final repository completion still depends on adding readable screenshots.
+These steps describe how to build or refresh the Power BI report from the completed SQL model.
 
 ## 1. Import SQL Tables
 
@@ -90,7 +90,9 @@ The SQL percentage columns are stored as percentage-point values such as `5.25`,
 
 ## 8. Build the Report Page
 
-Page name: Housing Market Overview
+Page 1: Dutch Housing Market Overview
+
+Page 2: Regional Performance Snapshot
 
 Recommended page size: 16:9.
 
@@ -98,8 +100,8 @@ Visuals:
 
 - five KPI cards in the top row
 - House Price Index Trend by Quarter line chart
-- Top 10 Regions by YoY House Price Growth bar chart
-- Top 10 Regions by Sold Dwellings bar chart
+- Top 5 Regions by YoY Growth bar chart
+- Top 5 Regions by Sold Dwellings bar chart
 - Latest Quarter Regional Snapshot table
 - slicers for `dim_date[year_quarter]` and `dim_region[region_name]`
 
@@ -111,6 +113,6 @@ After the report is refreshed and the region labels are readable, export these s
 - `model_view.png`
 - `kpi_cards.png`
 - `regional_comparison.png`
-- `latest_quarter_snapshot.png`
+- `regional_performance_snapshot.png`
 
 Do not create placeholder or fake screenshots.

@@ -113,3 +113,11 @@ WHERE crm.region_code IS NULL
 -- Once the check above returns no rows, enforce completeness.
 ALTER TABLE dim_region
     MODIFY region_name VARCHAR(100) NOT NULL;
+
+SELECT
+    region_id,
+    region_code,
+    region_name
+FROM dim_region
+ORDER BY region_id
+LIMIT 10;

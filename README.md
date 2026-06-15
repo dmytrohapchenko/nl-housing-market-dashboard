@@ -4,7 +4,7 @@
 
 This project is a SQL + Power BI reporting case using official Dutch housing market data from CBS. It is designed as a reporting-focused portfolio project for analyzing regional housing market trends and period-over-period KPI changes.
 
-The SQL layer builds a simple dimensional model for quarterly regional housing metrics. A Power BI dashboard v1 exists locally, and final repository completion depends on adding readable screenshots and final README polish.
+The SQL layer builds a simple dimensional model for quarterly regional housing metrics. The final Power BI dashboard design is documented with portfolio-ready screenshots.
 
 ## Business Questions
 
@@ -62,8 +62,8 @@ The SQL validation layer includes:
 The KPI query file includes:
 
 1. Quarterly house price index trend
-2. Top 10 regions by YoY house price growth in the latest quarter
-3. Bottom 10 regions by QoQ house price change in the latest quarter
+2. Top regions by YoY house price growth in the latest quarter
+3. Bottom regions by QoQ house price change in the latest quarter
 4. Top regions by sold dwellings in the latest quarter
 5. Regional average purchase price comparison in the latest quarter
 6. Regions above or below average house price index in the latest quarter
@@ -72,10 +72,6 @@ The KPI query file includes:
 
 ## Power BI Dashboard
 
-The local dashboard file is:
-
-- `powerbi/nl_housing_market_dashboard.pbix`
-
 Power BI assets:
 
 - `powerbi/housing_market_theme.json`
@@ -83,27 +79,39 @@ Power BI assets:
 - `powerbi/build_steps.md`
 - `powerbi/README.md`
 
+Final dashboard pages:
+
+- Page 1: Dutch Housing Market Overview
+- Page 2: Regional Performance Snapshot
+
 Dashboard content:
 
 - KPI cards for latest house price index, YoY change, QoQ change, sold dwellings, and average purchase price
 - quarterly house price index trend
-- top 10 regions by YoY house price growth
-- top 10 regions by sold dwellings
+- Top 5 regions by YoY growth
+- Top 5 regions by sold dwellings
 - latest-quarter regional snapshot table
 - slicers for quarter and region
 
-## Dashboard Preview
+## Screenshots
 
-Dashboard screenshot files were not present in this checkout, so preview images are not embedded here.
+Final dashboard screenshots are stored in `screenshots/`:
 
-Expected screenshot files:
+- `dashboard_overview.png`
+- `regional_performance_snapshot.png`
+- `model_view.png`
+- `kpi_cards.png`
+- `regional_comparison.png`
 
-- `screenshots/dashboard_overview.png`
-- `screenshots/model_view.png`
+![Dutch Housing Market Overview](screenshots/dashboard_overview.png)
+
+![Regional Performance Snapshot](screenshots/regional_performance_snapshot.png)
+
+![Model View](screenshots/model_view.png)
 
 ## Key Insights
 
-Key insights should be taken directly from the completed Power BI dashboard and verified screenshots. No screenshot image files were present in this checkout, so this README does not state numeric or regional findings.
+Key insights should be taken directly from the Power BI dashboard and verified screenshots. This README keeps the project summary concise and avoids restating screenshot-specific values.
 
 ## Repository Structure
 
@@ -131,5 +139,6 @@ screenshots/
 - SQL pipeline: completed
 - data quality checks: completed
 - KPI queries: completed
-- Power BI dashboard: v1 exists locally
-- screenshots: not present in this checkout
+- Power BI dashboard design: finalized
+- screenshots: present in `screenshots/`
+- PBIX file: not present in this checkout
