@@ -111,7 +111,11 @@ Final dashboard screenshots are stored in `screenshots/`:
 
 ## Key Insights
 
-Key insights should be taken directly from the Power BI dashboard and verified screenshots. This README keeps the project summary concise and avoids restating screenshot-specific values.
+- The latest dashboard snapshot shows a house price index of about 155.64, indicating prices are well above the 2020 baseline.
+- Latest price growth remains positive, with YoY growth around 6.8% and QoQ growth around 0.8%.
+- Latest sales activity is about 67K sold dwellings, with the average purchase price around EUR 461K; the highest visible sold dwellings regions include Groot-Amsterdam, Utrecht, Groot-Rijnmond, Agglomeratie 's-Gravenhage, and Zuidoost-Noord-Brabant.
+- The strongest visible YoY growth regions include Oost-Groningen, Zuidoost-Drenthe, Delfzijl en omgeving, Zuidoost-Zuid-Holland, and Achterhoek.
+- The trend chart shows strong growth from 2020 Q1 to 2025 Q4, with a dip around 2023 and renewed growth afterwards.
 
 ## Repository Structure
 
